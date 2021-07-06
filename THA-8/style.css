@@ -1,0 +1,178 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: #bb0000;
+  background: linear-gradient(45deg, rgba(255,0,0) 5%, rgba(255,125,78,1) 100%);
+  border-radius: 6px;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.center.profile {
+  top: 35%;
+}
+.card {
+  position: absolute;
+  height: 290px;
+  width: 320px;
+  transform: translate(-50%,-50%);
+  background: white;
+  border-radius: 3px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.info {
+  position: absolute;  height: 200px;
+  width: 200px;
+}
+
+.name {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  color: #ff0000;
+  font-size: 14px;
+  font-weight: 600;
+  top: 60%;
+}
+
+.job {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  color: black;
+  font-size: 12px;
+  font-weight: 400;
+  top: 68%;
+}
+
+.spinner-outer {
+  position: absolute;
+  height: 82px;
+  width: 82px;
+	top: -5px;
+	left: -5px;
+  border-radius: 100%;
+  border: 1.5px solid #b20000;
+  clip-path: polygon(0% 0%, 102% 0, 50% 50%, 102% 102%, 0% 102%);
+  transition: all 1.5s ease-in-out;
+}
+
+.spinner-inner {
+  position: absolute;
+  height: 76px;
+  width: 76px;
+	top: -2.5px;
+	left: -2.5px;
+  border-radius: 100%;
+  border: 1.5px solid #b20000;
+  clip-path: polygon(0 0, 102% 0%, 102% 102%, 0 102%, 50% 50%);
+  transition: all 1.5s ease-in-out;
+}
+
+img {
+  border-radius: 100%;
+  background: #bb0000;
+}
+
+.center.profile:hover .spinner-outer {
+  cursor: pointer;
+  transform: rotate(360deg);
+}
+.center.profile:hover .spinner-inner {
+  cursor: pointer;  
+  transform: rotate(-360deg);
+  }
+
+.actions {
+  position: absolute;
+  bottom: 0%;
+  height: 40%;
+  width: 62%;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.action-button {
+  height: 28px;
+  width: 115px;
+  background: white;
+  color: #b20000;
+  border: 2px solid #b20000;
+  border-radius: 30px;
+  position: relative;
+  margin: auto;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 550;
+  text-align: center;
+  line-height: 28px;
+	transition: transform .2s;
+}
+
+.action-button:hover {
+  background: #b20000;
+  color: white;
+	transform: scale(1.1);
+}
+
+.stats {
+  position: absolute;
+  right: 0%;
+  height: 100%;
+  width: 38%;
+}
+
+.stat-button {
+  height: 32.9%;
+  width: 100%;
+  background: #bb0000;
+  color: #fff;
+  border-radius: 1px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 2px;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 110px;
+	transition: transform .2s;
+}
+
+.stat-button:hover {
+  background: #ff4c4c;
+  cursor: pointer;
+	 transform: scale(0.9);
+}
+.num {
+  position: absolute;
+  top: -18px;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}

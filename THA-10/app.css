@@ -1,0 +1,227 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    /*background: #ffffff url('../img/geometry2.png');*//* Background pattern from Subtle Patterns */
+    /*background: #ffffff url('../img/congruent_pentagon.png'); /* Background pattern from Subtle Patterns*/
+    font-family: 'Coda', cursive;
+    background-color: rgba(211, 0, 0, 0.89);
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1,
+h2,
+h3,
+th {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: white
+}
+
+h1 {
+    font-size: 58px;
+    text-shadow: 2px 2px #caa6ff;
+}
+
+h2 {
+    font-size: 36px;
+    text-shadow: 2px 2px #caa6ff;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    align-items: center;
+    background: linear-gradient(160deg, #d4b53c 0%, #c91914 100%);
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 0 3em;
+    min-height: 680px;
+    padding: 32px;
+    width: 660px;
+}
+
+.deck .card {
+    align-items: center;
+    background: #2e3d49;
+    border-radius: 8px;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    font-size: 0;
+    justify-content: center;
+    height: 200px;
+    width: 125px;
+    margin-bottom: 10px;
+    background-image: url("Card.png");
+}
+
+.deck .card.open {
+    background: #d4b53c;
+    cursor: default;
+    transform: rotateY(0);
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: gray;
+    font-size: 33px;
+}
+
+
+.score-panel {
+    display: flex;
+    flex-wrap: nowrap;
+    margin:0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    width: 530px;
+}
+
+.score-panel .stars {
+    display: inline-block;
+    margin: 0;
+    margin: 0 5px 0 0;
+    padding: 0;
+    width: 15%;
+}
+
+.score-panel .stars li {
+    display: inline-block;
+    list-style: none;
+}
+
+.score-panel .timeElapsed {
+    display: inline-block;
+    width: 25%;
+}
+
+.score-panel .moves {
+    display: inline-block;
+    width: 25%;
+}
+
+.score-panel .matched {
+    display: inline-block;
+    width: 25%;
+}
+
+.score-panel .restart {
+    cursor: pointer;
+    float: right;
+    text-align: right;
+    text-align: center;
+
+}
+
+/*
+ * Styles for the Previous Score
+ */
+
+.previous-score__container {
+    display: none;
+}
+
+ .previous-score__container h2 {
+   text-align: center;
+}
+
+ .previous-score__table {
+    margin: auto;
+    width: 660px;
+ }
+
+.previous-score__table th {
+    background-color: black;
+    color: #fff;
+    font-weight: 200;
+}
+
+.previous-score__table tr,
+  .previous-score__table td {
+   background-color: white;
+}
+
+
+ .previous-score__table tr,
+  .previous-score__table th,
+   .previous-score__table td {
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+ }
+
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shake-to-shuffle {
+    animation: shake 1s;
+    /*animation-iteration-count: infinite;*/
+}
+
+@keyframes wrong-cards-color {
+    0%   {background-color: #ff3f00;}
+    25%  {background-color: #ffbb00;}
+    100%  {background-color: #ff3f00;}
+}
+
+@keyframes matching-cards-color {
+    0%   {background-color: lightgreen;}
+    25%  {background-color: #02cc16;}
+    50%  {background-color: #88ff00;}
+    75%  {background-color: #02cc16;}
+    100%  {background-color: lightgreen;}
+}
+
+.toBeReflipped {
+    animation: wrong-cards-color 1.2s;
+}
+
+.match {
+    animation: matching-cards-color 1.2s;
+}
